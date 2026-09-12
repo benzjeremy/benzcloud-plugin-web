@@ -1,0 +1,10 @@
+# Binaries
+benzcloud-plugin-web
+benzcloud-plugin-web.exe
+*.exe
+*.test
+*.prof
+
+# Data
+benzcloud-web-data/
+data/

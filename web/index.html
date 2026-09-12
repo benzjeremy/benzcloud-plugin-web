@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BenzCloud – Web-Hosting Plugin</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="app-header">
+    <div class="header-left">
+      <div class="logo-icon">🌐</div>
+      <div class="logo-text">
+        <span class="brand-title">BenzCloud Web-Hosting</span>
+        <span class="brand-badge">v1.0</span>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="lang-switcher">
+        <button id="langDE" class="btn-lang active" onclick="setLanguage('de')">DE</button>
+        <button id="langEN" class="btn-lang" onclick="setLanguage('en')">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="dashboard-header">
+      <div>
+        <h1 data-i18n="heading_sites">Gehostete Webseiten</h1>
+        <p class="desc" data-i18n="desc_sites">Erstelle und verwalte Webseiten unter frei wählbaren Subdomains mit HTML, PHP oder Astro.</p>
+      </div>
+      <button class="btn-primary" onclick="openCreateModal()" data-i18n="btn_new_site">➕ Neue Webseite</button>
+    </div>
+
+    <div class="sites-grid" id="sitesGrid"></div>
+  </main>
+
+  <div id="createSiteModal" class="modal-backdrop" style="display:none;">
+    <div class="modal-card">
+      <h3 data-i18n="modal_title">Neue Webseite erstellen</h3>
+      <form onsubmit="submitNewSite(event)">
+        <div class="form-group">
+          <label data-i18n="lbl_subdomain">Wunsch-Subdomain:</label>
+          <div class="sub-input-group">
+            <input type="text" id="newSubdomain" required placeholder="z. B. blog, shop, landing">
+            <span class="domain-suffix" id="dispDomainSuffix">.domain</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label data-i18n="lbl_title">Titel der Webseite:</label>
+          <input type="text" id="newTitle" required placeholder="Mein Firmenblog">
+        </div>
+        <div class="form-group">
+          <label data-i18n="lbl_engine">Web-Engine / Technologie:</label>
+          <select id="newEngine" class="select-box">
+            <option value="html">HTML5 &amp; CSS3 (Standard / Vorinstalliert)</option>
+            <option value="php">PHP (Dynamisches Scripting)</option>
+            <option value="astro">Astro (Modern Static Web)</option>
+          </select>
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn-secondary" onclick="closeCreateModal()" data-i18n="btn_cancel">Abbrechen</button>
+          <button type="submit" class="btn-primary" data-i18n="btn_create">Webseite anlegen</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer class="app-footer">
+    <span>BenzCloud Web-Plugin © 2026 Jeremy Benz • GNU GPLv3 Lizenz</span>
+    <span class="pill-pre">Pre-Release / In aktiver Entwicklung</span>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
