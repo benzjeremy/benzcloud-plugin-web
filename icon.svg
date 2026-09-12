@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#081410"/>
+      <stop offset="100%" stop-color="#0f261d"/>
+    </linearGradient>
+    <linearGradient id="emeraldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34d399"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <linearGradient id="tealGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2dd4bf"/>
+      <stop offset="100%" stop-color="#0d9488"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Background rounded squircle -->
+  <rect x="24" y="24" width="464" height="464" rx="108" fill="url(#bgGrad)" stroke="#134e3a" stroke-width="8"/>
+
+  <!-- Browser Window / Vhost Wireframe Card -->
+  <rect x="76" y="86" width="360" height="340" rx="32" fill="#0a1a14" stroke="url(#emeraldGrad)" stroke-width="10" filter="url(#glow)"/>
+
+  <!-- Browser Header Bar -->
+  <line x1="76" y1="144" x2="436" y2="144" stroke="#134e3a" stroke-width="6"/>
+  <!-- 3 Window dots -->
+  <circle cx="112" cy="116" r="8" fill="#ef4444"/>
+  <circle cx="136" cy="116" r="8" fill="#f59e0b"/>
+  <circle cx="160" cy="116" r="8" fill="#10b981"/>
+
+  <!-- URL Address Bar -->
+  <rect x="188" y="102" width="220" height="28" rx="8" fill="#0f261d" stroke="#134e3a" stroke-width="2"/>
+  <circle cx="206" cy="116" r="5" fill="#34d399"/>
+  <line x1="222" y1="116" x2="330" y2="116" stroke="#34d399" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- Central Wireframe Web Globe -->
+  <g stroke="url(#tealGrad)" stroke-width="5" fill="none" opacity="0.65">
+    <circle cx="256" cy="272" r="92"/>
+    <ellipse cx="256" cy="272" rx="44" ry="92"/>
+    <line x1="164" y1="272" x2="348" y2="272"/>
+    <line x1="180" y1="224" x2="332" y2="224"/>
+    <line x1="180" y1="320" x2="332" y2="320"/>
+  </g>
+
+  <!-- Big Glowing Code Brackets < / > -->
+  <g filter="url(#glow)">
+    <!-- Left Bracket < -->
+    <path d="M 186 230 L 140 272 L 186 314" fill="none" stroke="#f0fdf4" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- Slash / -->
+    <line x1="274" y1="216" x2="238" y2="328" stroke="#34d399" stroke-width="14" stroke-linecap="round"/>
+    <!-- Right Bracket > -->
+    <path d="M 326 230 L 372 272 L 326 314" fill="none" stroke="#f0fdf4" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Subdomain Host Technology Badges at Bottom -->
+  <rect x="120" y="374" width="70" height="26" rx="6" fill="#064e3b" stroke="#34d399" stroke-width="2"/>
+  <text x="155" y="392" fill="#ecfdf5" font-family="monospace" font-weight="bold" font-size="12" text-anchor="middle">HTML5</text>
+
+  <rect x="206" y="374" width="60" height="26" rx="6" fill="#064e3b" stroke="#34d399" stroke-width="2"/>
+  <text x="236" y="392" fill="#ecfdf5" font-family="monospace" font-weight="bold" font-size="12" text-anchor="middle">PHP</text>
+
+  <rect x="282" y="374" width="70" height="26" rx="6" fill="#064e3b" stroke="#34d399" stroke-width="2"/>
+  <text x="317" y="392" fill="#ecfdf5" font-family="monospace" font-weight="bold" font-size="12" text-anchor="middle">ASTRO</text>
+
+  <rect x="368" y="374" width="26" height="26" rx="6" fill="#064e3b" stroke="#10b981" stroke-width="2"/>
+  <circle cx="381" cy="387" r="4" fill="#10b981"/>
+</svg>
